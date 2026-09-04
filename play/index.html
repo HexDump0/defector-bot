@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive visualization of a Prisoner's Dilemma bot strategy." />
+    <title>The Five-Round Read</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="The Five-Round Read home">
+        <span class="brand-mark">5R</span>
+        <span>Strategy notebook <b>/ 01</b></span>
+      </a>
+      <div class="legend" aria-label="Move legend">
+        <span><i class="dot dot-c"></i> Cooperate</span>
+        <span><i class="dot dot-d"></i> Defect</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="eyebrow"><span>Iterated Prisoner’s Dilemma</span><span>Adaptive strategy</span></div>
+        <h1>Watch first.<br /><em>Then decide.</em></h1>
+        <div class="hero-bottom">
+          <p class="lede">A visual field guide to a bot that spends five rounds reading the room—then becomes a friend, an exploiter, or a permanent defector.</p>
+          <a class="jump" href="#simulator">Run the strategy <span>↓</span></a>
+        </div>
+      </section>
+
+      <section class="overview" aria-labelledby="map-title">
+        <div class="section-heading">
+          <div><span class="section-number">01</span><span class="kicker">Decision map</span></div>
+          <h2 id="map-title">Three futures,<br />one opening read.</h2>
+        </div>
+
+        <div class="strategy-map">
+          <article class="mode-card observe-card active" data-mode-card="observe">
+            <div class="mode-top"><span class="mode-index">00–05</span><span class="status-pill">Opening</span></div>
+            <div class="mode-icon eye-icon" aria-hidden="true"><span></span></div>
+            <h3>Observe</h3>
+            <p>Open with cooperation, then use a forgiving response while collecting five opponent moves.</p>
+            <div class="mini-sequence" aria-label="Five observations">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+          </article>
+
+          <div class="branch-zone">
+            <div class="branch-label"><span>After 5 rounds</span></div>
+            <div class="branch-line" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="outcome-grid">
+            <article class="mode-card exploit-card" data-mode-card="exploit">
+              <div class="mode-top"><span class="mode-index">PATH A</span><span class="signal"><b>C D C C C</b></span></div>
+              <div class="mode-icon target-icon" aria-hidden="true"><span></span></div>
+              <h3>Exploit</h3>
+              <p>The exact signal is recognized. Defect forever.</p>
+              <div class="result"><span>Response</span><b>D D D D …</b></div>
+            </article>
+
+            <article class="mode-card hard-card" data-mode-card="hard">
+              <div class="mode-top"><span class="mode-index">PATH B</span><span class="signal"><b>D D D D D</b></span></div>
+              <div class="mode-icon shield-icon" aria-hidden="true"><span></span></div>
+              <h3>Go hard</h3>
+              <p>Five opening defections trigger permanent defense.</p>
+              <div class="result"><span>Response</span><b>D D D D …</b></div>
+            </article>
+
+            <article class="mode-card friend-card" data-mode-card="friend">
+              <div class="mode-top"><span class="mode-index">PATH C</span><span class="signal">Anything else</span></div>
+              <div class="mode-icon link-icon" aria-hidden="true"><span></span></div>
+              <h3>Be a friend</h3>
+              <p>Stay forgiving—but switch to hard after 2 defections in the latest 8 rounds.</p>
+              <div class="result"><span>Default</span><b>Forgive & mirror</b></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="simulator" id="simulator" aria-labelledby="sim-title">
+        <div class="section-heading light-heading">
+          <div><span class="section-number">02</span><span class="kicker">Live laboratory</span></div>
+          <h2 id="sim-title">Put the bot<br />across the table.</h2>
+        </div>
+
+        <div class="sim-grid">
+          <div class="control-panel">
+            <label for="opponent-select">Choose an opponent</label>
+            <div class="select-wrap">
+              <select id="opponent-select">
+                <option value="cooperator">Always cooperates</option>
+                <option value="defector">Always defects</option>
+                <option value="signal">Plays CDCCC signal</option>
+                <option value="titfortat">Tit for tat</option>
+                <option value="grudger">The grudger</option>
+                <option value="random">Unpredictable</option>
+              </select>
+            </div>
+
+            <div class="opponent-note" id="opponent-note"></div>
+
+            <div class="mode-display">
+              <span>Current memory</span>
+              <strong id="current-mode"><i></i> Uninitialized</strong>
+            </div>
+
+            <div class="decision-box">
+              <div class="decision-label"><span>Latest decision</span><span id="round-label">Ready</span></div>
+              <p id="decision-copy">The bot begins every match with an unconditional cooperation.</p>
+            </div>
+
+            <div class="manual-moves">
+              <span>Or choose their next move</span>
+              <div>
+                <button class="manual-c" data-manual="C"><i></i> Cooperate</button>
+                <button class="manual-d" data-manual="D"><i></i> Defect</button>
+              </div>
+            </div>
+
+            <div class="sim-actions">
+              <button class="primary-button" id="step-button">Play next round <span>→</span></button>
+              <button class="icon-button" id="auto-button" aria-label="Auto-play rounds" title="Auto-play"><span class="play-icon">▶</span></button>
+              <button class="text-button" id="reset-button">Reset</button>
+            </div>
+          </div>
+
+          <div class="match-panel">
+            <div class="scoreboard">
+              <div><span>Bot score</span><strong id="bot-score">0</strong></div>
+              <div class="round-counter"><span>Round</span><strong id="round-count">00</strong></div>
+              <div><span>Opponent</span><strong id="opponent-score">0</strong></div>
+            </div>
+
+            <div class="history-head"><span>Round</span><span>Our bot</span><span>Outcome</span><span>Opponent</span></div>
+            <div class="history-list" id="history-list" aria-live="polite">
+              <div class="empty-state">
+                <div class="empty-coins"><i>C</i><i>D</i></div>
+                <p>No moves yet</p>
+                <span>Play a round to begin the experiment.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logic" aria-labelledby="logic-title">
+        <div class="section-heading">
+          <div><span class="section-number">03</span><span class="kicker">Under the hood</span></div>
+          <h2 id="logic-title">The rules,<br />in plain English.</h2>
+        </div>
+        <div class="rule-list">
+          <article><span class="rule-num">01</span><div><h3>Lead with trust</h3><p>Round one is always <mark class="mark-c">cooperate</mark>. No memory, no suspicion.</p></div></article>
+          <article><span class="rule-num">02</span><div><h3>Read the opening</h3><p>Collect five opponent moves. <code>CDCCC</code> means exploit; <code>DDDDD</code> means hard; every other opening means friend.</p></div></article>
+          <article><span class="rule-num">03</span><div><h3>Forgive your own retaliation</h3><p>In observe and friend modes, cooperate after the opponent cooperates—or after your own recent defection—to prevent an endless feud.</p></div></article>
+          <article><span class="rule-num">04</span><div><h3>Remember repeated betrayal</h3><p>From round 11 onward, a friend with at least two opponent defections in the last eight rounds becomes <mark class="mark-d">hard</mark> forever.</p></div></article>
+        </div>
+      </section>
+
+      <section class="payoffs" aria-labelledby="payoff-title">
+        <div class="payoff-copy">
+          <span class="kicker">Scoring key</span>
+          <h2 id="payoff-title">Trust pays.<br />Betrayal tempts.</h2>
+          <p>The classic payoff matrix used by the simulator. Each cell shows <b>bot points : opponent points</b>.</p>
+        </div>
+        <div class="matrix" role="table" aria-label="Prisoner's Dilemma payoff matrix">
+          <div class="matrix-corner"></div><div class="matrix-col">Opponent C</div><div class="matrix-col">Opponent D</div>
+          <div class="matrix-row">Bot C</div><div class="matrix-cell mutual"><strong>3 : 3</strong><span>Mutual trust</span></div><div class="matrix-cell sucker"><strong>0 : 5</strong><span>Sucker’s payoff</span></div>
+          <div class="matrix-row">Bot D</div><div class="matrix-cell temptation"><strong>5 : 0</strong><span>Temptation</span></div><div class="matrix-cell mutual-d"><strong>1 : 1</strong><span>Mutual defection</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>The Five-Round Read</span><span>Interactive strategy study</span><a href="#top">Back to top ↑</a></footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

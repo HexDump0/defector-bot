@@ -18,7 +18,9 @@ depending on an implementation detail.
    selection.
 4. [STRATEGY_NOTES.md](STRATEGY_NOTES.md) — consequences of the rules and a
    research agenda for stronger strategies.
-5. [AGENT_PLAYBOOK.md](AGENT_PLAYBOOK.md) — required workflow and validation
+5. [LOCAL_RUST_LAB.md](LOCAL_RUST_LAB.md) — fast commands for benchmarking,
+   candidate comparison, and local leaderboard replay.
+6. [AGENT_PLAYBOOK.md](AGENT_PLAYBOOK.md) — required workflow and validation
    checklist for agents changing a bot.
 
 ## Facts to keep top of mind

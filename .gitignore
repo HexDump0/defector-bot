@@ -1,0 +1,4 @@
+target/
+a.txt
+__pycache__/
+*.pyc

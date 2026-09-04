@@ -20,7 +20,9 @@ depending on an implementation detail.
    research agenda for stronger strategies.
 5. [LOCAL_RUST_LAB.md](LOCAL_RUST_LAB.md) — fast commands for benchmarking,
    candidate comparison, and local leaderboard replay.
-6. [AGENT_PLAYBOOK.md](AGENT_PLAYBOOK.md) — required workflow and validation
+6. [SCRAPING_AND_DATA.md](SCRAPING_AND_DATA.md) — scraper usage, public
+   endpoint reference, snapshot layout, and rescan policy.
+7. [AGENT_PLAYBOOK.md](AGENT_PLAYBOOK.md) — required workflow and validation
    checklist for agents changing a bot.
 
 ## Facts to keep top of mind
@@ -40,6 +42,9 @@ depending on an implementation detail.
 - Matchmaking favors bots with fewer lifetime battles. It is not rank-based.
 - Only active bots with at least 10 lifetime battles can appear in the public
   top 20.
+- Fresh population data comes from `tools/scrape.py` into `data/`; snapshots
+  go stale within a day at current battle pace, so re-scrape and re-baseline
+  before accepting a strategy change.
 
 ## Upstream sources
 
@@ -49,6 +54,8 @@ depending on an implementation detail.
 - [Match selection](https://github.com/Heliodex/Defector/blob/main/engine/selectBots.surql)
 - [Database schema and scoring](https://github.com/Heliodex/Defector/blob/main/src/lib/server/init.surql)
 - [Leaderboard query](https://github.com/Heliodex/Defector/blob/main/src/routes/%28any%29/leaderboard/leaderboardBots.surql)
+- [Leaderboard live query](https://github.com/Heliodex/Defector/blob/main/src/routes/%28any%29/leaderboard/leaderboard.remote.ts)
+- [Bot record query](https://github.com/Heliodex/Defector/blob/main/src/routes/%28any%29/bot/%5Bid=strid%5D/bot.remote.ts)
 - [Bot creation handler](https://github.com/Heliodex/Defector/blob/main/src/routes/%28main%29/submit-bot/bot.remote.ts)
 - [Public bot page](https://github.com/Heliodex/Defector/blob/main/src/routes/%28any%29/bot/%5Bid=strid%5D/%2Bpage.svelte)
 

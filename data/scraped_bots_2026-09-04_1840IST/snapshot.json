@@ -1,0 +1,1009 @@
+{
+ "battles": [
+  {
+   "botIds": [
+    "ecizi34jjj9lbw8ht829",
+    "5ggfzc8ycqkjadgde4ma"
+   ],
+   "botNames": [
+    "BeeBot2",
+    "mahad kay"
+   ],
+   "created": "2026-09-04T12:41:06.847Z",
+   "id": "xqdmgtaapoi6byoev7fc",
+   "scores": [
+    1,
+    1
+   ]
+  },
+  {
+   "botIds": [
+    "h96pnqtb7v65bsjdip3o",
+    "9bpt8bpz2dtiwyrcy9nx"
+   ],
+   "botNames": [
+    "random",
+    "SuperBASIC"
+   ],
+   "created": "2026-09-04T12:41:06.153Z",
+   "id": "jn3gpswfbgy2czq82afm",
+   "scores": [
+    2.4779411764705883,
+    1.0441176470588236
+   ]
+  },
+  {
+   "botIds": [
+    "qui5f0llrbf3n45s8vnf",
+    "e2fb30ftrxe1dptlrwlh"
+   ],
+   "botNames": [
+    "mahoraga v2",
+    "goatbotv1.6"
+   ],
+   "created": "2026-09-04T12:41:05.485Z",
+   "id": "1vjwojn6rr56w6biibbk",
+   "scores": [
+    1.0451127819548873,
+    0.9774436090225563
+   ]
+  },
+  {
+   "botIds": [
+    "5fcsluhdqy0cfnk19ih2",
+    "f0kupj5t33q97nk24w79"
+   ],
+   "botNames": [
+    "Corn Farmer v2",
+    "FlippityFloppity v3"
+   ],
+   "created": "2026-09-04T12:41:04.790Z",
+   "id": "czru3dxpyppcnhpzd853",
+   "scores": [
+    1.9834710743801653,
+    0.5454545454545454
+   ]
+  },
+  {
+   "botIds": [
+    "qui5f0llrbf3n45s8vnf",
+    "o7fd7lwb11nj1w1yfw5b"
+   ],
+   "botNames": [
+    "mahoraga v2",
+    "Firstborn v2"
+   ],
+   "created": "2026-09-04T12:41:04.121Z",
+   "id": "z8ch4ktsvw15ffdocb33",
+   "scores": [
+    1,
+    1
+   ]
+  },
+  {
+   "botIds": [
+    "41sxc6gch1dhsgtn1j04",
+    "f3gtj170wwmanxyifm9n"
+   ],
+   "botNames": [
+    "rollingdabeff",
+    "BeeBot3"
+   ],
+   "created": "2026-09-04T12:41:03.442Z",
+   "id": "o3hik9i96qrkwodjkems",
+   "scores": [
+    1.7647058823529411,
+    1.7941176470588236
+   ]
+  },
+  {
+   "botIds": [
+    "je18kd34kso6awah0jtd",
+    "iqoyw9tjqcfqi1uu71vq"
+   ],
+   "botNames": [
+    "Always Defect",
+    "Test2"
+   ],
+   "created": "2026-09-04T12:41:02.787Z",
+   "id": "2uh0uos5gdqpl2k4cd6z",
+   "scores": [
+    1,
+    1
+   ]
+  },
+  {
+   "botIds": [
+    "9bpt8bpz2dtiwyrcy9nx",
+    "o7fd7lwb11nj1w1yfw5b"
+   ],
+   "botNames": [
+    "SuperBASIC",
+    "Firstborn v2"
+   ],
+   "created": "2026-09-04T12:41:02.155Z",
+   "id": "8ndo8vsxe07swdby3qvi",
+   "scores": [
+    1.925233644859813,
+    2.0373831775700935
+   ]
+  },
+  {
+   "botIds": [
+    "41sxc6gch1dhsgtn1j04",
+    "r1434ctgc1w81vh0mvz5"
+   ],
+   "botNames": [
+    "rollingdabeff",
+    "playing.to.win"
+   ],
+   "created": "2026-09-04T12:41:01.528Z",
+   "id": "bj1sz96d8axfoxof6p78",
+   "scores": [
+    0.9207920792079208,
+    1.9603960396039604
+   ]
+  },
+  {
+   "botIds": [
+    "td4ju3jrpszou6pia4s4",
+    "5kqkx7m29awxyw84he86"
+   ],
+   "botNames": [
+    "Chicken banana \u00f0\u009f\u0090\u0094 \u00f0\u009f\u008d\u008c",
+    "Updated Generous Bot"
+   ],
+   "created": "2026-09-04T12:41:00.871Z",
+   "id": "iuxcoo4s8o34tbdkw44h",
+   "scores": [
+    1.9622641509433962,
+    1.990566037735849
+   ]
+  },
+  {
+   "botIds": [
+    "5fcsluhdqy0cfnk19ih2",
+    "33l8mlwu7vh8q4j4bnes"
+   ],
+   "botNames": [
+    "Corn Farmer v2",
+    "Punisher"
+   ],
+   "created": "2026-09-04T12:41:00.221Z",
+   "id": "0yro8o4ny7c2tuhcd93q",
+   "scores": [
+    1.0490196078431373,
+    0.9901960784313726
+   ]
+  },
+  {
+   "botIds": [
+    "ecizi34jjj9lbw8ht829",
+    "nwhzm0iw5f8h4vth8xem"
+   ],
+   "botNames": [
+    "BeeBot2",
+    "Try"
+   ],
+   "created": "2026-09-04T12:40:59.583Z",
+   "id": "ou1rttc0zqt0mciu0jds",
+   "scores": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "botIds": [
+    "5ggfzc8ycqkjadgde4ma",
+    "zytqfkdrj74zl0k5ru5e"
+   ],
+   "botNames": [
+    "mahad kay",
+    "Firstborn v3.2"
+   ],
+   "created": "2026-09-04T12:40:58.924Z",
+   "id": "5m69uhqs8tim7l7v2pie",
+   "scores": [
+    1,
+    1
+   ]
+  },
+  {
+   "botIds": [
+    "ttd9us6wcg1eatepaxx7",
+    "ytvzcn6oqg9fc1adogcs"
+   ],
+   "botNames": [
+    "C!",
+    "ITS CORN!\u00f0\u009f\u008c\u00bd THE ONLY THING THAT CAN SAVE THE WORLD!"
+   ],
+   "created": "2026-09-04T12:40:58.243Z",
+   "id": "gyrs4rkqmwv952huqb8q",
+   "scores": [
+    0.03773584905660377,
+    2.981132075471698
+   ]
+  },
+  {
+   "botIds": [
+    "f3gtj170wwmanxyifm9n",
+    "r7q6io44k179bne2l6o1"
+   ],
+   "botNames": [
+    "BeeBot3",
+    "apex predator v2"
+   ],
+   "created": "2026-09-04T12:40:57.591Z",
+   "id": "ps4xctek8v0fz8h4pnas",
+   "scores": [
+    1.983739837398374,
+    1.9593495934959348
+   ]
+  },
+  {
+   "botIds": [
+    "gn66dhad6osgbedjdeb5",
+    "b986kp9bs5o7a499ct1o"
+   ],
+   "botNames": [
+    "the thinker v2",
+    "always defect"
+   ],
+   "created": "2026-09-04T12:40:56.941Z",
+   "id": "y7qmlak8iceskwy2b46r",
+   "scores": [
+    0.86,
+    1.28
+   ]
+  },
+  {
+   "botIds": [
+    "d4ejphuh6hpk2y1l17im",
+    "hw80lc7lr0ivm04psl0a"
+   ],
+   "botNames": [
+    "apex predator v3",
+    "JustDefunct"
+   ],
+   "created": "2026-09-04T12:40:56.254Z",
+   "id": "jl1qq1yvnuncu78u3lv3",
+   "scores": [
+    0.9940119760479041,
+    1.0119760479041917
+   ]
+  },
+  {
+   "botIds": [
+    "bvja2epaayqckmugsgun",
+    "41jeee4fbtvi8g02ek03"
+   ],
+   "botNames": [
+    "copycat",
+    "BIUN!!!"
+   ],
+   "created": "2026-09-04T12:40:55.518Z",
+   "id": "6280egup3pwsu22gqllc",
+   "scores": [
+    0,
+    3
+   ]
+  },
+  {
+   "botIds": [
+    "oya04qfmgapfltmux2w7",
+    "5fcsluhdqy0cfnk19ih2"
+   ],
+   "botNames": [
+    "JBot",
+    "Corn Farmer v2"
+   ],
+   "created": "2026-09-04T12:40:54.944Z",
+   "id": "oip11ekjh2j3r1knxlh6",
+   "scores": [
+    1,
+    1.027027027027027
+   ]
+  },
+  {
+   "botIds": [
+    "ecizi34jjj9lbw8ht829",
+    "41sxc6gch1dhsgtn1j04"
+   ],
+   "botNames": [
+    "BeeBot2",
+    "rollingdabeff"
+   ],
+   "created": "2026-09-04T12:40:54.306Z",
+   "id": "z7t8kn69z04rydehafj8",
+   "scores": [
+    1.8869565217391304,
+    1.8608695652173912
+   ]
+  },
+  {
+   "botIds": [
+    "h96pnqtb7v65bsjdip3o",
+    "hw80lc7lr0ivm04psl0a"
+   ],
+   "botNames": [
+    "random",
+    "JustDefunct"
+   ],
+   "created": "2026-09-04T12:40:53.632Z",
+   "id": "0buir5yslnl84fhrh2hp",
+   "scores": [
+    0.44554455445544555,
+    2.108910891089109
+   ]
+  },
+  {
+   "botIds": [
+    "jn8hv84q9bjbho6pry72",
+    "5yjrq4erumoof502ar4g"
+   ],
+   "botNames": [
+    "Statistical\u00f0\u009f\u00a4\u00932.0",
+    "Always cooperates"
+   ],
+   "created": "2026-09-04T12:40:53.011Z",
+   "id": "6daz4sxa2xaszfhsig3d",
+   "scores": [
+    2,
+    2
+   ]
+  },
+  {
+   "botIds": [
+    "33l8mlwu7vh8q4j4bnes",
+    "jn8hv84q9bjbho6pry72"
+   ],
+   "botNames": [
+    "Punisher",
+    "Statistical\u00f0\u009f\u00a4\u00932.0"
+   ],
+   "created": "2026-09-04T12:40:52.350Z",
+   "id": "2a3q4m1h7t62nxhe7v0x",
+   "scores": [
+    2,
+    2
+   ]
+  },
+  {
+   "botIds": [
+    "qqe64b5y7rhjmypdykll",
+    "h7kz8qt6tcwntpo3fxs8"
+   ],
+   "botNames": [
+    "apex5a",
+    "Praesidium"
+   ],
+   "created": "2026-09-04T12:40:51.735Z",
+   "id": "phcva6lxow3bybi7cm5j",
+   "scores": [
+    1.9908256880733946,
+    1.9908256880733946
+   ]
+  },
+  {
+   "botIds": [
+    "ytvzcn6oqg9fc1adogcs",
+    "zytqfkdrj74zl0k5ru5e"
+   ],
+   "botNames": [
+    "ITS CORN!\u00f0\u009f\u008c\u00bd THE ONLY THING THAT CAN SAVE THE WORLD!",
+    "Firstborn v3.2"
+   ],
+   "created": "2026-09-04T12:40:51.069Z",
+   "id": "91ilntyd8uqwbpxycsj0",
+   "scores": [
+    1,
+    1.028301886792453
+   ]
+  },
+  {
+   "botIds": [
+    "u0qfqej1mb9b39aatk48",
+    "xhtfwtmne5mo0csil1gw"
+   ],
+   "botNames": [
+    "AntiBot",
+    "Reverse Tit for Tat"
+   ],
+   "created": "2026-09-04T12:40:50.423Z",
+   "id": "0e7z7mg46o7ylu4gxlnw",
+   "scores": [
+    1.4951456310679612,
+    1.4951456310679612
+   ]
+  },
+  {
+   "botIds": [
+    "5ggfzc8ycqkjadgde4ma",
+    "41jeee4fbtvi8g02ek03"
+   ],
+   "botNames": [
+    "mahad kay",
+    "BIUN!!!"
+   ],
+   "created": "2026-09-04T12:40:49.770Z",
+   "id": "fvf5tr1a4zgn63sjgj0i",
+   "scores": [
+    1.1176470588235294,
+    0.9411764705882353
+   ]
+  },
+  {
+   "botIds": [
+    "5fcsluhdqy0cfnk19ih2",
+    "ecizi34jjj9lbw8ht829"
+   ],
+   "botNames": [
+    "Corn Farmer v2",
+    "BeeBot2"
+   ],
+   "created": "2026-09-04T12:40:49.116Z",
+   "id": "4kff9tagj6qp6tuwj6z4",
+   "scores": [
+    1.008695652173913,
+    1.008695652173913
+   ]
+  },
+  {
+   "botIds": [
+    "v1pflrapnu22r3jyt4bf",
+    "41sxc6gch1dhsgtn1j04"
+   ],
+   "botNames": [
+    "Reactant V1",
+    "rollingdabeff"
+   ],
+   "created": "2026-09-04T12:40:48.448Z",
+   "id": "u19yo109ygn3c80nws9o",
+   "scores": [
+    1.8181818181818181,
+    1.9772727272727273
+   ]
+  },
+  {
+   "botIds": [
+    "je18kd34kso6awah0jtd",
+    "e2fb30ftrxe1dptlrwlh"
+   ],
+   "botNames": [
+    "Always Defect",
+    "goatbotv1.6"
+   ],
+   "created": "2026-09-04T12:40:47.748Z",
+   "id": "otnqjqc259ieiuwpjucm",
+   "scores": [
+    1.0397350993377483,
+    0.9801324503311258
+   ]
+  },
+  {
+   "botIds": [
+    "ytvzcn6oqg9fc1adogcs",
+    "bvja2epaayqckmugsgun"
+   ],
+   "botNames": [
+    "ITS CORN!\u00f0\u009f\u008c\u00bd THE ONLY THING THAT CAN SAVE THE WORLD!",
+    "copycat"
+   ],
+   "created": "2026-09-04T12:40:47.038Z",
+   "id": "5h0b92kpvduerd5zs2ro",
+   "scores": [
+    3,
+    0
+   ]
+  },
+  {
+   "botIds": [
+    "3g9rbak5y6ownyac1e02",
+    "mnsgarr4ce4nxhy4y6f1"
+   ],
+   "botNames": [
+    "BIUN",
+    "MoveStealer v2"
+   ],
+   "created": "2026-09-04T12:40:46.471Z",
+   "id": "n78croli1mbxlf2v2sji",
+   "scores": [
+    1.9519230769230769,
+    1.9519230769230769
+   ]
+  },
+  {
+   "botIds": [
+    "v1pflrapnu22r3jyt4bf",
+    "cnfw6hbqwcpgd6umf8jw"
+   ],
+   "botNames": [
+    "Reactant V1",
+    "A Rational Individual"
+   ],
+   "created": "2026-09-04T12:40:45.819Z",
+   "id": "5ybgf6t4bsc6t5klkre4",
+   "scores": [
+    1.884297520661157,
+    2.0082644628099175
+   ]
+  },
+  {
+   "botIds": [
+    "gn66dhad6osgbedjdeb5",
+    "zytqfkdrj74zl0k5ru5e"
+   ],
+   "botNames": [
+    "the thinker v2",
+    "Firstborn v3.2"
+   ],
+   "created": "2026-09-04T12:40:45.142Z",
+   "id": "3q211eca6usoaa3x0ma0",
+   "scores": [
+    0.8926174496644296,
+    1.2147651006711409
+   ]
+  },
+  {
+   "botIds": [
+    "3g9rbak5y6ownyac1e02",
+    "5ggfzc8ycqkjadgde4ma"
+   ],
+   "botNames": [
+    "BIUN",
+    "mahad kay"
+   ],
+   "created": "2026-09-04T12:40:44.461Z",
+   "id": "9510g88i6k0vpugw08gp",
+   "scores": [
+    0.9727272727272728,
+    1.0545454545454545
+   ]
+  },
+  {
+   "botIds": [
+    "pq1ps8bojvq19xayij2c",
+    "h3hg22l1e1m0vyh5hnu1"
+   ],
+   "botNames": [
+    "Kr\u00c3\u00a1loveck\u00c3\u00bd kraj",
+    "feeder"
+   ],
+   "created": "2026-09-04T12:40:43.807Z",
+   "id": "9remzon8iwe9vyy6ge8d",
+   "scores": [
+    0.9926470588235294,
+    1.0147058823529411
+   ]
+  },
+  {
+   "botIds": [
+    "93xfd7mis72gzo1f0v1l",
+    "uy97722yq4a0ya5im3u9"
+   ],
+   "botNames": [
+    "Dev defect def",
+    "take a fuckin' guess"
+   ],
+   "created": "2026-09-04T12:40:43.142Z",
+   "id": "essjspjjsgiurwilwvkv",
+   "scores": [
+    1.7903225806451613,
+    0.6048387096774194
+   ]
+  },
+  {
+   "botIds": [
+    "jnjtsrog751s66binnaw",
+    "41jeee4fbtvi8g02ek03"
+   ],
+   "botNames": [
+    "Reactant V2",
+    "BIUN!!!"
+   ],
+   "created": "2026-09-04T12:40:42.502Z",
+   "id": "tg0fpodcyqrqbk8khcy5",
+   "scores": [
+    2,
+    2
+   ]
+  },
+  {
+   "botIds": [
+    "5yjrq4erumoof502ar4g",
+    "0qlqa8olyu17x3e7vqhn"
+   ],
+   "botNames": [
+    "Always cooperates",
+    "Praecipuus"
+   ],
+   "created": "2026-09-04T12:40:41.832Z",
+   "id": "5ebkob8qqucldqop1nxq",
+   "scores": [
+    0.019417475728155338,
+    2.9902912621359223
+   ]
+  },
+  {
+   "botIds": [
+    "rlbeien6efyg2nkvzce2",
+    "5kqkx7m29awxyw84he86"
+   ],
+   "botNames": [
+    "defector",
+    "Updated Generous Bot"
+   ],
+   "created": "2026-09-04T12:40:41.163Z",
+   "id": "h324k4tucvrnn3m4xidd",
+   "scores": [
+    1.1714285714285715,
+    0.9142857142857143
+   ]
+  },
+  {
+   "botIds": [
+    "hmh5rx3e657tsspmgm8x",
+    "zp892mn9vcklnapgwot5"
+   ],
+   "botNames": [
+    "FirstBot",
+    "LukeStarterBot"
+   ],
+   "created": "2026-09-04T12:40:40.532Z",
+   "id": "n069jmmqbnz7asoizen9",
+   "scores": [
+    1.0077519379844961,
+    1.0077519379844961
+   ]
+  },
+  {
+   "botIds": [
+    "i3rpjmx3hp1xodtswy0i",
+    "r1434ctgc1w81vh0mvz5"
+   ],
+   "botNames": [
+    "Mabey",
+    "playing.to.win"
+   ],
+   "created": "2026-09-04T12:40:39.830Z",
+   "id": "kcqazcj01ock4b33wg4r",
+   "scores": [
+    1.04,
+    0.98
+   ]
+  },
+  {
+   "botIds": [
+    "h3hg22l1e1m0vyh5hnu1",
+    "8hpvcqabt9122r9ky3it"
+   ],
+   "botNames": [
+    "feeder",
+    "cop"
+   ],
+   "created": "2026-09-04T12:40:39.154Z",
+   "id": "z05yqkm003eaktlwp70g",
+   "scores": [
+    1.018018018018018,
+    0.990990990990991
+   ]
+  },
+  {
+   "botIds": [
+    "jv8d86ecqxc12ldoro4k",
+    "v1pflrapnu22r3jyt4bf"
+   ],
+   "botNames": [
+    "Grudger",
+    "Reactant V1"
+   ],
+   "created": "2026-09-04T12:40:38.517Z",
+   "id": "rc0x5i83utu63ay4fn87",
+   "scores": [
+    2,
+    2
+   ]
+  },
+  {
+   "botIds": [
+    "jn8hv84q9bjbho6pry72",
+    "d4ejphuh6hpk2y1l17im"
+   ],
+   "botNames": [
+    "Statistical\u00f0\u009f\u00a4\u00932.0",
+    "apex predator v3"
+   ],
+   "created": "2026-09-04T12:40:37.863Z",
+   "id": "7flya3hgwkcrfxearjny",
+   "scores": [
+    2,
+    2
+   ]
+  },
+  {
+   "botIds": [
+    "jn8hv84q9bjbho6pry72",
+    "uy97722yq4a0ya5im3u9"
+   ],
+   "botNames": [
+    "Statistical\u00f0\u009f\u00a4\u00932.0",
+    "take a fuckin' guess"
+   ],
+   "created": "2026-09-04T12:40:37.209Z",
+   "id": "7bjsumlkhefupjfgryuq",
+   "scores": [
+    1.348623853211009,
+    1.5688073394495412
+   ]
+  },
+  {
+   "botIds": [
+    "qui5f0llrbf3n45s8vnf",
+    "w9c62uboevec4hh06hgn"
+   ],
+   "botNames": [
+    "mahoraga v2",
+    "cop7"
+   ],
+   "created": "2026-09-04T12:40:36.597Z",
+   "id": "r7qtnj2hf9nj9029hl1t",
+   "scores": [
+    1.0128205128205128,
+    0.9935897435897436
+   ]
+  },
+  {
+   "botIds": [
+    "52omxytoaje146eg9hnx",
+    "5kqkx7m29awxyw84he86"
+   ],
+   "botNames": [
+    "goatbotv1.8",
+    "Updated Generous Bot"
+   ],
+   "created": "2026-09-04T12:40:35.833Z",
+   "id": "qeurnxioqnojfgotcvzi",
+   "scores": [
+    1.225,
+    1.025
+   ]
+  },
+  {
+   "botIds": [
+    "f3gtj170wwmanxyifm9n",
+    "559kycyz3k804du524jm"
+   ],
+   "botNames": [
+    "BeeBot3",
+    "welp theres no name cap so i gotta expolit this until it gets patched dddddddsdsdfsdfdsf4d5f415214162168456123148541213418+512312312312312312312312312312312312312312312312312312312311231321231321321231321231231231232321213"
+   ],
+   "created": "2026-09-04T12:40:35.165Z",
+   "id": "a023bqnw3mdgewz4qpze",
+   "scores": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "botIds": [
+    "jv8d86ecqxc12ldoro4k",
+    "uy97722yq4a0ya5im3u9"
+   ],
+   "botNames": [
+    "Grudger",
+    "take a fuckin' guess"
+   ],
+   "created": "2026-09-04T12:40:34.519Z",
+   "id": "pzw2uopjfwsgxt3r6y9u",
+   "scores": [
+    1.6355932203389831,
+    0.6949152542372882
+   ]
+  }
+ ],
+ "allBattles": 122997,
+ "bots": [
+  {
+   "id": "r7q6io44k179bne2l6o1",
+   "meanScore": 1.7393049454317424,
+   "name": "apex predator v2",
+   "stats": {
+    "battles": 1609,
+    "losses": 753,
+    "wins": 282
+   }
+  },
+  {
+   "id": "d4ejphuh6hpk2y1l17im",
+   "meanScore": 1.695067302362659,
+   "name": "apex predator v3",
+   "stats": {
+    "battles": 1125,
+    "losses": 523,
+    "wins": 197
+   }
+  },
+  {
+   "id": "r1434ctgc1w81vh0mvz5",
+   "meanScore": 1.6942235225939515,
+   "name": "playing.to.win",
+   "stats": {
+    "battles": 1099,
+    "losses": 439,
+    "wins": 218
+   }
+  },
+  {
+   "id": "8hpvcqabt9122r9ky3it",
+   "meanScore": 1.691916531201747,
+   "name": "cop",
+   "stats": {
+    "battles": 651,
+    "losses": 170,
+    "wins": 208
+   }
+  },
+  {
+   "id": "t9n0kcuf250ieowvu5jd",
+   "meanScore": 1.6869140766264419,
+   "name": "goatbotv2",
+   "stats": {
+    "battles": 1721,
+    "losses": 702,
+    "wins": 285
+   }
+  },
+  {
+   "id": "e2fb30ftrxe1dptlrwlh",
+   "meanScore": 1.682385874826092,
+   "name": "goatbotv1.6",
+   "stats": {
+    "battles": 1880,
+    "losses": 714,
+    "wins": 406
+   }
+  },
+  {
+   "id": "oya04qfmgapfltmux2w7",
+   "meanScore": 1.663399044062512,
+   "name": "JBot",
+   "stats": {
+    "battles": 4416,
+    "losses": 1527,
+    "wins": 1071
+   }
+  },
+  {
+   "id": "i5o8d2m5elmjoccm5s31",
+   "meanScore": 1.6615812861600041,
+   "name": "Czechias imperium",
+   "stats": {
+    "battles": 2981,
+    "losses": 866,
+    "wins": 979
+   }
+  },
+  {
+   "id": "41jeee4fbtvi8g02ek03",
+   "meanScore": 1.656534372332161,
+   "name": "BIUN!!!",
+   "stats": {
+    "battles": 479,
+    "losses": 246,
+    "wins": 78
+   }
+  },
+  {
+   "id": "qqe64b5y7rhjmypdykll",
+   "meanScore": 1.6541878448881195,
+   "name": "apex5a",
+   "stats": {
+    "battles": 3098,
+    "losses": 1408,
+    "wins": 271
+   }
+  },
+  {
+   "id": "jv8d86ecqxc12ldoro4k",
+   "meanScore": 1.6348587683820301,
+   "name": "Grudger",
+   "stats": {
+    "battles": 6139,
+    "losses": 1767,
+    "wins": 2302
+   }
+  },
+  {
+   "id": "u0qfqej1mb9b39aatk48",
+   "meanScore": 1.6268192544564626,
+   "name": "AntiBot",
+   "stats": {
+    "battles": 4468,
+    "losses": 2095,
+    "wins": 110
+   }
+  },
+  {
+   "id": "td4ju3jrpszou6pia4s4",
+   "meanScore": 1.6233465171398709,
+   "name": "Chicken banana \u00f0\u009f\u0090\u0094 \u00f0\u009f\u008d\u008c",
+   "stats": {
+    "battles": 198,
+    "losses": 127,
+    "wins": 60
+   }
+  },
+  {
+   "id": "jnjtsrog751s66binnaw",
+   "meanScore": 1.6207433975099195,
+   "name": "Reactant V2",
+   "stats": {
+    "battles": 1996,
+    "losses": 1329,
+    "wins": 34
+   }
+  },
+  {
+   "id": "mnsgarr4ce4nxhy4y6f1",
+   "meanScore": 1.6069978397429816,
+   "name": "MoveStealer v2",
+   "stats": {
+    "battles": 2395,
+    "losses": 1077,
+    "wins": 32
+   }
+  },
+  {
+   "id": "zp892mn9vcklnapgwot5",
+   "meanScore": 1.6058199438716116,
+   "name": "LukeStarterBot",
+   "stats": {
+    "battles": 893,
+    "losses": 265,
+    "wins": 254
+   }
+  },
+  {
+   "id": "6tuhb716q1d2t9h8pre0",
+   "meanScore": 1.6005099334858064,
+   "name": "pumpkin\u00f0\u009f\u008e\u0083\u00f0\u009f\u008e\u0083\u00f0\u009f\u008e\u0083",
+   "stats": {
+    "battles": 3514,
+    "losses": 1478,
+    "wins": 1587
+   }
+  },
+  {
+   "id": "33l8mlwu7vh8q4j4bnes",
+   "meanScore": 1.5960513194783588,
+   "name": "Punisher",
+   "stats": {
+    "battles": 2347,
+    "losses": 1550,
+    "wins": 35
+   }
+  },
+  {
+   "id": "gn66dhad6osgbedjdeb5",
+   "meanScore": 1.5831144523371148,
+   "name": "the thinker v2",
+   "stats": {
+    "battles": 4442,
+    "losses": 2809,
+    "wins": 92
+   }
+  },
+  {
+   "id": "41sxc6gch1dhsgtn1j04",
+   "meanScore": 1.5731357928960261,
+   "name": "rollingdabeff",
+   "stats": {
+    "battles": 3200,
+    "losses": 1869,
+    "wins": 1078
+   }
+  }
+ ],
+ "activeBots": 67,
+ "og": true
+}

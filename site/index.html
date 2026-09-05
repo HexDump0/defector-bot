@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Predator Population v1 — Full Tree & Decision Visualizer</title>
+<style>
+:root{--bg:#0b0e14;--panel:#121724;--panel2:#182032;--line:#263148;--txt:#e8edf7;--mut:#93a0b8;--acc:#4cc38a;--acc2:#6ea8ff;--warn:#ffb454;--bad:#ff6b6b;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1a2540 0%,var(--bg) 55%) fixed,var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+.hero{border:1px solid var(--line);border-radius:20px;padding:32px;background:linear-gradient(180deg,rgba(108,168,255,.12),transparent 60%),var(--panel)}
+.hero h1{margin:0;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.02em}
+.hero p{color:var(--mut);max-width:78ch}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.badge{font:12.5px var(--mono);border:1px solid var(--line);background:#0e1422;padding:6px 10px;border-radius:999px}.badge b{color:var(--acc)}
+.card{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:18px;margin-top:14px}
+.card h2{margin:0 0 6px;font-size:18px}.mut{color:var(--mut)}.mono{font-family:var(--mono);font-size:13px}
+.grid{display:grid;gap:14px}@media(min-width:900px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c4{grid-template-columns:repeat(4,1fr)}}
+.stat{font-size:28px;font-weight:750}.stat small{font-size:12.5px;color:var(--mut);font-weight:500}
+button{cursor:pointer;border:1px solid var(--line);background:#0e1422;color:var(--txt);border-radius:12px;padding:9px 14px;font-weight:700}
+button.C{border-color:#2c7a55}button.C:hover{background:#123626}button.D{border-color:#8a3a3a}button.D:hover{background:#3a1515}button.ghost{background:transparent}button.on{outline:2px solid var(--acc2)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.log{border:1px solid var(--line);border-radius:12px;background:#080c14;padding:12px;min-height:180px;max-height:320px;overflow:auto;font:12.5px/1.7 var(--mono)}
+.pill{display:inline-block;min-width:22px;text-align:center;border-radius:6px;padding:0 6px;font-weight:800}.pC{background:#123626;color:#7ce3a8}.pD{background:#3a1515;color:#ff9c9c}.pB{background:#1a2b4d;color:#9cc2ff}
+#treeScroll{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#080c14;max-height:560px}
+#treeSvg{display:block}.nd{cursor:pointer}.nd circle{stroke:#0b0e14;stroke-width:1.5}.nd text{font:10px var(--mono);fill:var(--mut)}.nd.sel circle{stroke:#fff;stroke-width:2.5}
+.edge{stroke:#2b3a58;stroke-width:1.4}.edge.D{stroke:#7a3b3b}.edge.C{stroke:#2c7a55}
+.bars{display:flex;align-items:flex-end;gap:2px;height:90px;margin-top:8px}.bars div{flex:1;background:linear-gradient(180deg,var(--acc2),#2b4a80);border-radius:3px 3px 0 0;min-width:3px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--mut)}td.num{text-align:right;font-family:var(--mono)}
+select,input[type=range]{background:#0e1422;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px}
+.strip{display:flex;gap:3px;flex-wrap:wrap;margin-top:8px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}.kv dt{color:var(--mut)}.kv dd{margin:0;font-family:var(--mono)}
+footer{margin-top:20px;color:var(--mut);font-size:13px}kbd{font-family:var(--mono);background:#080c14;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.branch{border-left:3px solid var(--acc);padding:6px 10px;margin:6px 0;background:#0e1422;border-radius:0 10px 10px 0;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<h1>Apex Predator <span style="color:var(--acc)">Population v1</span> — tree & decision visualizer</h1>
+<p>Everything the bot does, explorable. Full 905-node offline tree (depth 40), live walk, full <span class="mono">populationBot → policy → baseline/decide</span> port running in-page, policy explorer, and measured results. Source <span class="mono">bots/apex_predator_population_v1.ts</span>, snapshot <span class="mono">2026-09-05_0905IST</span>.</p>
+<div class="badges"><span class="badge">nodes <b>905</b> · 849 internal · 56 leaves</span><span class="badge">depth <b>40</b></span><span class="badge">weighted mean <b>1.8462</b> CI 1.829–1.864</span><span class="badge">forfeits <b>2/3700</b> · maxMs <b>3.61</b></span><span class="badge">payoffs <b>C/C=2 D/C=3 D/D=1 C/D=0</b></span></div>
+</div>
+
+<div class="grid c4">
+<div class="card"><div class="stat">905</div><div class="mut">nodes · <span class="mono" id="sDepth">depth 40, ~23 wide past d12</span></div><div class="bars" id="depthBars"></div></div>
+<div class="card"><div class="stat">56 <small>leaves</small></div><div class="mut" id="leafDist">D×31 · base×17 · C×1 · TFT×2 · grim×1 · cyc×3 · per×1</div><div class="branch">Opening is a long cooperative trunk: nodes 0–5 expect C then a D at depth 4 — the tree hunts the opponent's first defection timing.</div></div>
+<div class="card"><div class="stat">51 <small>policies</small></div><div class="mut">0 baseline · 1 C · 2 D · 3 TFT · 4–6 grims · 7–16 cycles · 17–22 probes · 23–25 warm · 26–34 caps · 35–40 periods · 41–50 switchers</div></div>
+<div class="card"><div class="stat">5×D<small> guard</small></div><div class="mut">history ≥ 8 and last 5 opp D → forced D. Only difference vs untested that saves ~+0.23 on Defect-Half-likes.</div></div>
+</div>
+
+<div class="card">
+<h2>1 · Full tree — all 905 nodes</h2>
+<p class="mut">Green edge = opponent C, red = opponent D. Green node = play C, red = play D, blue = leaf policy. Drag-scroll, click any node for path + subtree. <span class="mono" id="treeMeta">loading tree.json…</span></p>
+<div class="controls"><button id="zin">Zoom +</button><button id="zout">Zoom −</button><button id="zreset" class="ghost">Reset view</button><button id="showTrunk" class="ghost">Highlight C-trunk</button></div>
+<div id="treeScroll"><svg id="treeSvg" width="3600" height="1300"></svg></div>
+<div class="grid c2"><div><h3 class="mono">Selected node</h3><dl class="kv" id="nodeInfo"><dt>node</dt><dd>click the tree</dd></dl></div>
+<div><h3 class="mono">Path to node</h3><div class="log" id="pathLog" style="min-height:120px">—</div></div></div>
+</div>
+
+<div class="card">
+<h2>2 · Decision simulator — the real logic, step by step</h2>
+<p class="mut">You play the <b>opponent</b>; the bot auto-plays. Each round shows: 5×D guard? tree node? fallback? and exactly which baseline branch fired with pC/pD, streaks, olives. Presets autoplay an archetype.</p>
+<div class="controls">
+<button class="C" id="oC">Opp C</button><button class="D" id="oD">Opp D</button><button class="ghost" id="oBack">Undo</button><button class="ghost" id="oReset">Reset</button>
+<select id="preset"><option value="">preset…</option><option>AllC</option><option>AllD</option><option>TFT</option><option>Grim</option><option>DC-cycle</option><option>Random</option><option>BIUN-like</option><option>DefectHalf-like</option></select>
+<button id="oRun">Auto 30</button>
+</div>
+<div class="grid c2">
+<div><div class="log" id="simLog"></div><p class="mono mut" id="simState">round 0</p></div>
+<div><h3 class="mono">Why this move? (branch trace)</h3><div id="trace"></div>
+<h3 class="mono">Memory</h3><dl class="kv" id="memInfo"></dl></div>
+</div>
+</div>
+
+<div class="grid c2">
+<div class="card">
+<h2>3 · Baseline branch map</h2>
+<div class="branch"><b>probe</b> — opened D? 5×C test (:141). Bounded All-D cost, unlocks 4 bots.</div>
+<div class="branch"><b>sparsePeace</b> — CCD / CCCCD then isolated D → C; exit on DD (:149).</div>
+<div class="branch"><b>pristine</b> — oppD==0 → C, never disturb (:179).</div>
+<div class="branch"><b>periodic</b> — unconditional period 2–6 over last 20 → D (:181).</div>
+<div class="branch"><b>exploit</b> — pD≥0.4 with ≥3 post-D samples (w=10) → D (:184).</div>
+<div class="branch"><b>contrite</b> — pC≥0.6 → C, retaliate only unprovoked D (:190).</div>
+<div class="branch"><b>olives</b> — mutual-D streaks 5 then 20 → C, max 2 (:200). Else D.</div>
+</div>
+<div class="card">
+<h2>4 · Policy explorer</h2>
+<div class="controls"><select id="polId"></select><label class="mut mono">start <input type="range" id="polStart" min="0" max="40" value="0"> <span id="polStartV">0</span></label><label class="mut mono"><input type="checkbox" id="polReact"> reacted (for 17–22)</label></div>
+<p class="mono mut" id="polDesc"></p><div class="strip" id="polStrip"></div>
+<h2 style="margin-top:16px">5 · Measured (same seed 620260905, 74×50)</h2>
+<table><tr><th></th><th style="text-align:right">v1</th><th style="text-align:right">untested</th></tr>
+<tr><td>weighted mean</td><td class="num">1.8462</td><td class="num">1.8510 (+0.005 n.s.)</td></tr>
+<tr><td>BIUN</td><td class="num">1.283</td><td class="num">2.092</td></tr>
+<tr><td>Defect Half v2</td><td class="num">1.708</td><td class="num">1.482</td></tr>
+<tr><td>goat v4.1</td><td class="num">2.485</td><td class="num">2.446</td></tr>
+<tr><td>forfeit/size/maxMs</td><td class="num">2 / 20.6k / 3.6</td><td class="num">7 / 29.9k / 6.1</td></tr></table>
+</div>
+</div>
+
+<footer>Serve with <kbd>python3 -m http.server</kbd> in <kbd>site/</kbd> (fetch needs http). Data <span class="mono">site/tree.json</span> extracted from <span class="mono">bots/apex_predator_population_v1.ts:269</span>.</footer>
+</div>
+<script>
+// ---------- port of bot logic (guard+tree+policy+baseline) ----------
+let TREE=[];
+const WINDOW=10,CT=0.6,ET=0.4,MINDS=3,OLIVES=[5,20];
+const fm=()=>({seen:0,opponentC:0,opponentD:0,mutualDStreak:0,olives:0,sparsePeace:false});
+function updMem(hist,mem){
+ if(!mem||typeof mem!=='object'||mem.seen!==hist.length-1) {const m=fm();let k=0;for(const r of hist){r.opponent==='D'?m.opponentD++:m.opponentC++;(r.you==='D'&&r.opponent==='D')?m.mutualDStreak++:m.mutualDStreak=0;}m.seen=hist.length;if(mem&&Number.isFinite(mem.olives))m.olives=Math.max(0,Math.floor(mem.olives));return m;}
+ const l=hist[hist.length-1];l.opponent==='D'?mem.opponentD++:mem.opponentC++;(l.you==='D'&&l.opponent==='D')?mem.mutualDStreak++:mem.mutualDStreak=0;mem.seen=hist.length;return mem;
+}
+function rates(h){let aC=0,sC=0,aD=0,sD=0;const s=Math.max(1,h.length-WINDOW);for(let i=s;i<h.length;i++){if(h[i-1].you==='C'){sC++;if(h[i].opponent==='C')aC++;}else{sD++;if(h[i].opponent==='C')aD++;}}return{pC:(aC+.5)/(sC+1),pD:(aD+.5)/(sD+1),sD};}
+function periodic(h){const n=h.length;if(n<12)return false;const st=Math.max(0,n-20);let c=false,d=false;for(let i=st;i<n;i++)h[i].opponent==='C'?c=true:d=true;if(!c||!d)return false;for(let p=2;p<=6;p++){let m=true,cm=0;for(let i=st+p;i<n;i++){cm++;if(h[i].opponent!==h[i-p].opponent){m=false;break;}}if(!m||cm<8)continue;let tft=true;for(let i=Math.max(1,st);i<n;i++)if(h[i].opponent!==h[i-1].you){tft=false;break;}if(!tft)return true;}return false;}
+function decide(h,mem){const n=h.length;if(!n)return['C',fm(),'open'];mem=updMem(h,mem);const last=h[n-1],prev=n>=2?h[n-2]:null;
+ if(h[0].opponent==='D'&&h.every(r=>r.you==='C')&&(last.opponent==='C'||n<=4))return['C',mem,'probe:D-opener'];
+ if(mem.sparsePeace){if(last.opponent==='D'&&prev&&prev.opponent==='D'){mem.sparsePeace=false;}else return['C',mem,'sparsePeace:hold'];}
+ const c7=n===3&&h[0].opponent==='C'&&h[1].opponent==='C'&&h[2].opponent==='D';
+ const c5=n===5&&h.slice(0,4).every(r=>r.opponent==='C')&&h[4].opponent==='D';
+ if((c7||c5)&&h.every(r=>r.you==='C')){mem.sparsePeace=true;return['C',mem,'sparsePeace:enter'];}
+ if(mem.opponentD===0)return['C',mem,'pristine'];
+ if(periodic(h))return['D',mem,'periodic:unconditional'];
+ const{pC,pD,sD}=rates(h);
+ if(sD>=MINDS&&pD>=ET)return['D',mem,`exploit:pD=${pD.toFixed(2)} n=${sD}`];
+ if(pC>=CT){if(last.opponent==='D'&&!(prev&&prev.you==='D'))return['D',mem,`contrite:retaliate pC=${pC.toFixed(2)}`];return['C',mem,`contrite:coop pC=${pC.toFixed(2)}`];}
+ if(mem.opponentC>0&&mem.olives<OLIVES.length&&mem.mutualDStreak>=OLIVES[mem.olives]){mem.olives++;return['C',mem,'olive:'+mem.olives+'/2'];}
+ return['D',mem,`default-D pC=${pC.toFixed(2)} streak=${mem.mutualDStreak}`];}
+function baseline(h){try{return decide(h,null);}catch(e){return['D',fm(),'error'];}}
+function policy(id,h,start,reacted){const n=h.length,last=h[n-1],prev=h[n-2];
+ if(id===0){if(!n)return'C';const clean=h.every(r=>r.you==='C');if(clean&&((h.slice(0,3).map(r=>r.opponent).join('')==='CCD')||(h.slice(0,5).map(r=>r.opponent).join('')==='CCCCD'))&&!h.some((r,i)=>i&&r.opponent==='D'&&h[i-1].opponent==='D'))return'C';return baseline(h)[0];}
+ if(id===1)return'C';if(id===2)return'D';if(id===3)return(last&&last.opponent)||'C';
+ if(id===4)return(last.opponent==='D'&&prev.opponent==='D')?'D':'C';if(id===5)return(last.opponent==='D'&&prev.you!=='D')?'D':'C';
+ if(id===6)return(h.slice(-3).every(r=>r.opponent==='D')&&n>=3)?'D':'C';
+ if(id>=7&&id<=16){const p=['DC','DDC','DCC','DDCC','DCCC','DDDCC','DDCCC','DCCCC','DDDDC','DDDDDCCCC'];return p[id-7][(n-start)%p[id-7].length];}
+ if(id>=17&&id<=22){if(n===start)return'D';if(n<=start+2)return'C';const r=reacted??h.slice(start+1,start+3).some(x=>x.opponent==='D');if(r)return policy(id<20?0:5,h,start);if(id%3===2)return'D';return(n-start)%2?'C':'D';}
+ if(id>=23&&id<=25){const w=[2,4,8][id-23];return n<start+w?'C':policy(0,h,start);}
+ if(id>=26&&id<=34){const f=(id-25)/10;return h.reduce((s,r)=>s+(r.you==='D'),0)/(n+1)<f?'D':'C';}
+ if(id>=35&&id<=40){const s=['DDDDCCCC','DDDDDCCCCC','DDDDDDDDDDCCCCCCCCCC','DDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCC','DCCCCCCCCCC','DDCCCCCCCC'][id-35];return s[(n-start)%s.length];}
+ if(id>=41&&id<=45)return n-start<[5,10,20,40,60][id-41]?'C':'D';if(id>=46&&id<=50)return n-start<[5,10,20,40,60][id-46]?'D':'C';return'D';}
+function botMove(h){if(h.length>=8&&h.slice(-5).every(r=>r.opponent==='D'))return{mv:'D',via:'guard:5×D',node:-1};let k=0;for(let i=0;i<h.length;i++){const nd=TREE[k];if(nd[0]===-1)return{mv:policy(nd[1],h,nd[2]),via:'leaf p'+nd[1]+'@'+nd[2],node:k};if(h[i].you!==(nd[0]?'D':'C')){const b=baseline(h);return{mv:b[0],via:'fallback→'+b[2],node:k};}k=nd[h[i].opponent==='D'?2:1];if(k<0){const b=baseline(h);return{mv:b[0],via:'dead-end→'+b[2],node:k};}}const nd=TREE[k];if(nd[0]===-1)return{mv:policy(nd[1],h,nd[2]),via:'leaf p'+nd[1]+'@'+nd[2],node:k};return{mv:nd[0]?'D':'C',via:'internal node '+k,node:k};}
+// ---------- tree SVG ----------
+let zoom=1,sel=0;
+async function init(){const r=await fetch('tree.json');TREE=await r.json();
+ document.getElementById('treeMeta').textContent='905 nodes · click any node';
+ layout();simReset();polInit();depthBars();}
+function layout(){
+ const svg=document.getElementById('treeSvg');svg.innerHTML='';const DX=86,DY=22,TOP=30;
+ const kids=k=>{const n=TREE[k];if(n[0]===-1)return[];const o=[];if(n[1]>=0)o.push({k:n[1],e:'C'});if(n[2]>=0)o.push({k:n[2],e:'D'});return o;};
+ const yMap={},depth=k=>{let d=0,c=k;const seen=new Set();while(true){let p=-1,pe='';for(let i=0;i<TREE.length;i++){const n=TREE[i];if(n[0]===-1)continue;if(n[1]===c||n[2]===c){p=i;break;}}if(p<0||seen.has(p))break;seen.add(p);c=p;d++;if(d>60)break;}return d;};
+ // post-order y via DFS leaf counter
+ let ly=0;const pos={};(function dfs(k,d){const n=TREE[k],ch=kids(k);if(!ch.length){pos[k]={x:40+d*DX,y:TOP+ly*DY};ly++;return;}ch.forEach(c=>dfs(c.k,d+1));pos[k]={x:40+d*DX,y:(pos[ch[0].k].y+pos[ch[ch.length-1].k].y)/2};})(0,0);
+ svg.setAttribute('width',40+41*DX);svg.setAttribute('height',Math.max(400,ly*DY+60));svg.style.transform=`scale(${zoom})`;svg.style.transformOrigin='top left';
+ const g=(t,a)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e;};
+ for(let k=0;k<TREE.length;k++){const n=TREE[k];if(n[0]===-1)continue;for(const c of kids(k)){const a=pos[k],b=pos[c.k];g('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:'edge '+c.e});}}
+ for(let k=0;k<TREE.length;k++){const n=TREE[k],p=pos[k];if(!p)continue;const isLeaf=n[0]===-1;const col=isLeaf?'#6ea8ff':(n[0]?'#ff6b6b':'#4cc38a');
+  const gr=g('g',{class:'nd'+(k===sel?' sel':''),transform:`translate(${p.x},${p.y})`});const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('r',isLeaf?7:6);c.setAttribute('fill',col);gr.appendChild(c);
+  const t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('x',10);t.setAttribute('y',3);t.textContent=isLeaf?('p'+n[1]):k;gr.appendChild(t);gr.onclick=()=>{sel=k;showNode();layout();};}
+ showNode();
+ function showNode(){const n=TREE[sel],p=pos[sel];let sub=0;const st=[sel];while(st.length){const k=st.pop();sub++;const nn=TREE[k];if(nn[0]!==-1){if(nn[1]>=0)st.push(nn[1]);if(nn[2]>=0)st.push(nn[2]);}}
+  document.getElementById('nodeInfo').innerHTML=`<dt>node</dt><dd>${sel} ${n[0]===-1?('leaf → policy '+n[1]+' @'+n[2]):('play '+(n[0]?'D':'C')+' → C:'+n[1]+' D:'+n[2])}</dd><dt>depth</dt><dd>${depth(sel)}</dd><dt>subtree</dt><dd>${sub} nodes</dd><dt>pos</dt><dd>${Math.round(p.x)},${Math.round(p.y)}</dd>`;
+  // path from root following C choices? show ancestor chain by search
+  document.getElementById('pathLog').innerHTML='path highlight: trunk = all-C replies (nodes 0→1→2→3→4). Click nodes along red/green edges to inspect D-branches (e.g. node 5 fans to 227/74).';}
+}
+function depthBars(){const el=document.getElementById('depthBars');const counts=[1,2,4,8,15,26,36,43,49,19,21,21,23,22,22,22,22,22,22,22,22,23,23,23,23,23,23,24,23,23,23,23,23,23,23,23,23,23,23,23,23];const m=Math.max(...counts);el.innerHTML=counts.map(c=>`<div style="height:${Math.round(c/m*88)+2}px" title="${c}"></div>`).join('');}
+// ---------- simulator ----------
+let H=[],MEM=null;
+function simReset(){H=[];MEM=null;document.getElementById('simLog').innerHTML='';document.getElementById('trace').innerHTML='<span class="mut mono">play opponent moves…</span>';updSim();}
+function updSim(){document.getElementById('simState').textContent=`round ${H.length} · you [${H.map(r=>r.you).join('')}] · opp [${H.map(r=>r.opponent).join('')}]`;
+ const m={seen:H.length,opponentC:H.filter(r=>r.opponent==='C').length,opponentD:H.filter(r=>r.opponent==='D').length,mutualDStreak:(()=>{let s=0;for(let i=H.length-1;i>=0;i--){if(H[i].you==='D'&&H[i].opponent==='D')s++;else break;}return s;})()};
+ document.getElementById('memInfo').innerHTML=`<dt>opp C/D</dt><dd>${m.opponentC}/${m.opponentD}</dd><dt>mutualD</dt><dd>${m.mutualDStreak}</dd><dt>history</dt><dd>${H.length}</dd>`;}
+function oppStep(o){const b=botMove(H);const you=b.mv;H.push({you,opponent:o?'D':'C'});
+ const log=document.getElementById('simLog');log.innerHTML+=`<div>r${H.length} you <span class="pill ${you==='C'?'pC':'pD'}">${you}</span> opp <span class="pill ${o?'pD':'pC'}">${o?'D':'C'}</span> <span class="pB pill">${b.via}</span></div>`;log.scrollTop=1e6;
+ const[r,mm,why]=decide(H.slice(0,-1),null);document.getElementById('trace').innerHTML=`<div class="branch"><b>${b.via}</b> — baseline would say <b>${r}</b> (${why}) · node ${b.node}</div>`;updSim();}
+function arch(a,n){ // opponent reply generator given history
+ if(a==='AllC')return 0;if(a==='AllD')return 1;
+ if(a==='TFT')return H.length? (H[H.length-1].you==='D'?1:0):0;
+ if(a==='Grim')return H.some(r=>r.you==='D')?1:0;
+ if(a==='DC-cycle')return H.length%2?0:1;
+ if(a==='Random')return Math.random()<.5?0:1;
+ if(a==='BIUN-like')return (H.length>=2&&H.length<9)?1:0;
+ if(a==='DefectHalf-like')return (H.length%10<5)?1:0;return 0;}
+document.getElementById('oC').onclick=()=>oppStep(0);document.getElementById('oD').onclick=()=>oppStep(1);
+document.getElementById('oReset').onclick=simReset;document.getElementById('oBack').onclick=()=>{H.pop();document.getElementById('simLog').innerHTML=H.map((r,i)=>`<div>r${i+1} you <span class="pill ${r.you==='C'?'pC':'pD'}">${r.you}</span> opp <span class="pill ${r.opponent==='D'?'pD':'pC'}">${r.opponent}</span></div>`).join('');updSim();};
+document.getElementById('oRun').onclick=()=>{const a=document.getElementById('preset').value||'TFT';for(let i=0;i<30;i++)oppStep(arch(a));};
+// ---------- policy explorer ----------
+const PDESC={0:'baseline + sparse CCD/CCCCD hold',1:'always C',2:'always D',3:'tit-for-tat',4:'DD-grim',5:'unprovoked-D grim',6:'3×D grim','7-16':'fixed cycles','17-22':'D-probe → react? baseline/grim : D/alternate','23-25':'warm C then baseline','26-34':'defect-rate caps','35-40':'long periods','41-45':'C×N→D','46-50':'D×N→C'};
+function polInit(){const s=document.getElementById('polId');for(let i=0;i<=50;i++){const o=document.createElement('option');o.value=i;o.textContent='policy '+i;s.appendChild(o);}s.value=0;
+ const upd=()=>{const id=+s.value,st=+document.getElementById('polStart').value;document.getElementById('polStartV').textContent=st;
+  document.getElementById('polDesc').textContent='id '+id+': '+(PDESC[id]||PDESC[Object.keys(PDESC).find(k=>k.includes('-')&&id>=+k.split('-')[0]&&id<=+k.split('-')[1])]);
+  const h=H.length?H:[{you:'C',opponent:'C'}];let out='';for(let n=0;n<40;n++){const hh=Array.from({length:n},(_,i)=>({you:'?',opponent:'?'}));out+=`<span class="pill ${policy(id,hh,st,document.getElementById('polReact').checked)==='C'?'pC':'pD'}">${policy(id,hh,st,document.getElementById('polReact').checked)}</span>`;}
+  document.getElementById('polStrip').innerHTML=out;};
+ s.onchange=upd;document.getElementById('polStart').oninput=upd;document.getElementById('polReact').onchange=upd;upd();}
+document.getElementById('zin').onclick=()=>{zoom=Math.min(2.5,zoom+.2);layout();};
+document.getElementById('zout').onclick=()=>{zoom=Math.max(.4,zoom-.2);layout();};
+document.getElementById('zreset').onclick=()=>{zoom=1;layout();};
+document.getElementById('showTrunk').onclick=()=>{sel=0;layout();document.getElementById('treeScroll').scrollTo({left:0,top:0});};
+init();
+</script>
+</body>
+</html>

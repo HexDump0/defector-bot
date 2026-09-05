@@ -1,0 +1,16 @@
+// Tit for Two Tats (ckuyl3k3452cldvlfyhw) mean=1.6226353176583372 stats={'battles': 1599, 'losses': 913, 'wins': 18}
+export default function bot({ history }) {
+
+    if (history.length < 2) {
+        return ["C", null];
+    }
+
+    const lastOppMove = history.at(-1).opponent;
+    const prevOppMove = history.at(-2).opponent;
+
+    if (lastOppMove === "D" && prevOppMove === "D") {
+        return ["D", null];
+    }
+
+    return ["C", null];
+}

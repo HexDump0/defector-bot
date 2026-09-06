@@ -1,7 +1,7 @@
-# Defector bots
+# Defector Bots
 
-Bots for a prisoners dilema tournament  
-The latest versions manage to get a score >1.85 consistatnly by learning the current bot population and exploiting them
+Bots for [Defector](https://defector.hackclub.com/guide/writing-a-bot) a Hack Club YSWS based on an iterated Prisoner's Dilemma tournament.
+The latest bots score >1.85 consistently by learning the live population and exploiting them
 
 # Local engine
 
